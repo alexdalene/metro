@@ -29,7 +29,7 @@ const links: { name: string; href: string; icon: React.ReactNode }[] = [
 const serverInfo: { name: string; value: string; icon: React.ReactNode }[] = [
   {
     name: "Spillere",
-    value: "93 / 100",
+    value: "93",
     icon: <LightningBoltIcon />,
   },
   {
@@ -75,7 +75,7 @@ export default function Home() {
           </li>
         ))}
         <li className="bg-primary rounded-lg gap-4 group hover:bg-zinc-50 transition-colors">
-          <Link href="/join" className="w-full h-full">
+          <Link href="#" className="w-full h-full">
             <button className="p-4 w-full h-full text-2xl flex items-center gap-2 text-zinc-900 font-bold uppercase group-hover:text-primary transition-colors">
               Bli med
             </button>
