@@ -2,6 +2,7 @@ import {
   LockOpen1Icon,
   MagnifyingGlassIcon,
   DiscordLogoIcon,
+  PersonIcon,
 } from "@radix-ui/react-icons";
 import Image from "next/image";
 import logo from "@/public/metro-logo.webp";
@@ -24,6 +25,19 @@ const links: { name: string; href: string; icon: React.ReactNode }[] = [
   },
 ];
 
+const serverInfo: { name: string; value: string; icon: React.ReactNode }[] = [
+  {
+    name: "Spillere",
+    value: "93/100",
+    icon: <PersonIcon />,
+  },
+  {
+    name: "Karakterer",
+    value: "123",
+    icon: <PersonIcon />,
+  },
+];
+
 export default function Home() {
   return (
     <div className="mx-auto flex flex-col items-center justify-center gap-4">
@@ -40,9 +54,26 @@ export default function Home() {
           </li>
         ))}
       </ul>
-      <h1 className="text-6xl font-bold">
-        Metro, byen som <span className="text-primary">aldri sover</span>
+      <h1 className="text-6xl font-bold leading-tight">
+        Metro, byen som <br />
+        <span className="text-primary">aldri sover</span>
       </h1>
+      <ul className="flex gap-4 self-start mt-4">
+        {serverInfo.map((info) => (
+          <li
+            key={info.name}
+            className="flex flex-col bg-zinc-900 p-4 rounded-lg gap-4"
+          >
+            <span className="uppercase text-zinc-500 font-bold flex items-center gap-2">
+              {info.icon}
+              {info.name}
+            </span>
+            <span className="text-4xl font-bold text-primary">
+              {info.value}
+            </span>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
