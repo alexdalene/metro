@@ -4,7 +4,6 @@ import {
   LightningBoltIcon,
   DiscordLogoIcon,
   PersonIcon,
-  ArrowRightIcon,
 } from "@radix-ui/react-icons";
 import Image from "next/image";
 import logo from "@/public/metro-logo.webp";
