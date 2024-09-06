@@ -1,12 +1,14 @@
 import {
   LockOpen1Icon,
   MagnifyingGlassIcon,
+  LightningBoltIcon,
   DiscordLogoIcon,
   PersonIcon,
+  ArrowRightIcon,
 } from "@radix-ui/react-icons";
 import Image from "next/image";
 import logo from "@/public/metro-logo.webp";
-
+import Link from "next/link";
 const links: { name: string; href: string; icon: React.ReactNode }[] = [
   {
     name: "Regelverk",
@@ -28,8 +30,8 @@ const links: { name: string; href: string; icon: React.ReactNode }[] = [
 const serverInfo: { name: string; value: string; icon: React.ReactNode }[] = [
   {
     name: "Spillere",
-    value: "93/100",
-    icon: <PersonIcon />,
+    value: "93 / 100",
+    icon: <LightningBoltIcon />,
   },
   {
     name: "Karakterer",
@@ -73,6 +75,13 @@ export default function Home() {
             </span>
           </li>
         ))}
+        <li className="bg-primary rounded-lg gap-4 group hover:bg-zinc-50 transition-colors">
+          <Link href="/join" className="w-full h-full">
+            <button className="p-4 w-full h-full text-2xl flex items-center gap-2 text-zinc-900 font-bold uppercase group-hover:text-primary transition-colors">
+              Bli med
+            </button>
+          </Link>
+        </li>
       </ul>
     </div>
   );
